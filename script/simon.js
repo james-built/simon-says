@@ -44,6 +44,8 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   setTimeout(startGame(), 2000);
 } else if (playerArray !== computerArray) {
   alert('you lose');
+  playerArray  = [];
+  computerArray = [];
   //lose events
 }
 }
