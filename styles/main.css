@@ -4,6 +4,14 @@
   border-radius: 100px;
 }
 
+#score {
+  font-weight: bold;
+}
+
+#level {
+  font-weight: bold;
+}
+
 @media (min-width: 576px) {
   body {
     background-color: #f4f4f4;
