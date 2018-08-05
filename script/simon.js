@@ -70,4 +70,5 @@ function getComputerArray() {
 
 function fireLight(num) {
   document.getElementById(num).className = 'light animated';
+  setTimeout(function(){document.getElementById(num).className = "light"}, 300);
 }
