@@ -61,7 +61,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
     level = 7;
     document.getElementById('level').textContent = 'Level: ' + (level - 2);
   }
-  setTimeout(startGame(), 4000); // loop game
+  setTimeout(function(){startGame()},1000); // loop game timeout doesn't work after adding audio effects
 } else {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
