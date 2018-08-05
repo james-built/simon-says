@@ -24,9 +24,6 @@ function startGame() {
 // store player inputs
 function playerInput(value) {
   playerArray.push(Number(value));
-  for (let i = 0; i < computerArray.length; i++) {
-    document.getElementById(computerArray[i]).className = 'light';
-  }
   if (playerArray.length === computerArray.length) {
     console.log('compare function')
     compareArrays();
@@ -51,7 +48,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   // restart game
   setTimeout(startGame(), 2000);
 } else {
-  alert('you lose');
+  alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
   computerArray = [];
   document.getElementById('score').textContent = 'Score: 0'
@@ -70,5 +67,5 @@ function getComputerArray() {
 
 function fireLight(num) {
   document.getElementById(num).className = 'light animated';
-  setTimeout(function(){document.getElementById(num).className = "light"}, 300);
+  setTimeout(function(){document.getElementById(num).className = "light"}, 201);
 }
