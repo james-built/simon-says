@@ -5,6 +5,7 @@ var level = 3;
 var score = 0;
 
 function startGame() {
+  document.getElementById('start').disabled = true; //disable button once game starts
   playerArray = [];
   computerArray = [];
   // get array for game
@@ -24,6 +25,8 @@ function startGame() {
 // store player inputs
 function playerInput(value) {
   document.getElementById("audio"+value).play();
+  document.getElementById(value).className = 'light animated';
+  setTimeout(function(){document.getElementById(value).className = "light"}, 301);
   playerArray.push(Number(value));
   if (playerArray.length === computerArray.length) {
     console.log('compare function')
@@ -54,8 +57,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
     document.getElementById('level').textContent = 'Level: ' + (level - 2);
   }
   // play a win sound?
-  // restart game
-  setTimeout(startGame(), 4000);
+  setTimeout(startGame(), 4000); // loop game
 } else {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
@@ -64,7 +66,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   score = 0;
   document.getElementById('score').textContent = 'Score: 0'
   document.getElementById('level').textContent = 'Level: 1'
-  //lose events
+  document.getElementById('start').disabled = false; //re-enable start button
 }
 }
 
