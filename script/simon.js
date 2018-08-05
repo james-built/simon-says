@@ -24,6 +24,9 @@ function startGame() {
 // store player inputs
 function playerInput(value) {
   playerArray.push(Number(value));
+  for (let i = 0; i < computerArray.length; i++) {
+    document.getElementById(computerArray[i]).className = 'light';
+  }
   if (playerArray.length === computerArray.length) {
     console.log('compare function')
     compareArrays();
@@ -58,16 +61,17 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
 }
 }
 
-
 function getComputerArray() {
-  for (let i = 0; i < level; i++) { //uses the level provided to set the array length
+  for (let i = 0; i < level; i++) {
     computerArray.push((Math.floor(Math.random() * 8) + 1));
   }
   console.log(computerArray);
   return computerArray;
 }
+
 function fireLight(num) {
-  console.log(document.getElementById(num))
+  console.log(document.getElementById(num));
+  document.getElementById(num).className = 'light animated';
   // set a css variable for the button to play animation
   // reset the css variable to default state
 }

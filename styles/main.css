@@ -12,6 +12,16 @@
   font-weight: bold;
 }
 
+@keyframes glow{
+  from {background-color: grey;}
+  to {background-color: blue;}
+}
+
+.animated {
+  animation-name: glow;
+  animation-duration: 0.2s;
+}
+
 @media (min-width: 576px) {
   body {
     background-color: #f4f4f4;
