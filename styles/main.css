@@ -1,20 +1,30 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(230, 156, 59, 0.808);
+}
+h1 {
+  font-family: 'Press Start 2P', cursive;
+}
 .light {
   height: 5em;
   width: 5em;
   border-radius: 100px;
 }
-
 #score {
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 2em;
 }
-
 #level {
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 2em;
 }
-
+#start {
+  border-radius: 10px;
+  background-color: rgba(125, 202, 253, 0.87);
+}
 @keyframes glow{
   from {background-color: grey;}
-  to {background-color: blue;}
+  to {background-color: rgba(0, 153, 255, 0.87);}
 }
 
 .animated {
@@ -23,9 +33,6 @@
 }
 
 @media (min-width: 576px) {
-  body {
-    background-color: #f4f4f4;
-  }
   .light {
     height: 150px;
     width: 150px;
