@@ -44,6 +44,14 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
     level = 5;
     document.getElementById('level').textContent = 'Level: ' + (level - 2);
   }
+  if (score >= 1500) {
+    level = 6;
+    document.getElementById('level').textContent = 'Level: ' + (level - 2);
+  }
+  if (score >= 2000) {
+    level = 7;
+    document.getElementById('level').textContent = 'Level: ' + (level - 2);
+  }
   // play a win sound?
   // restart game
   setTimeout(startGame(), 2000);
@@ -51,6 +59,8 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
   computerArray = [];
+  level = 3;
+  score = 0;
   document.getElementById('score').textContent = 'Score: 0'
   document.getElementById('level').textContent = 'Level: 1'
   //lose events
