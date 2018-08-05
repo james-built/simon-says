@@ -6,6 +6,7 @@ var score = 0;
 
 function startGame() {
   document.getElementById('start').disabled = true;
+  toggleButtons(false);
   playerArray = [];
   computerArray = [];
   // get array for game
@@ -71,6 +72,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   document.getElementById('score').textContent = 'Score: 0'
   document.getElementById('level').textContent = 'Level: 1'
   document.getElementById('start').disabled = false;
+  toggleButtons(true);
 }
 }
 
@@ -92,4 +94,11 @@ function fireLight(num) {
       document.removeChild(this);
   }, false);*/ //dynamically creating audio element to allow repeat plays before end, this code to remove the created elements doesn't seem to work?
   audio.play();
+}
+
+function toggleButtons(value) {
+  let buttons = document.getElementsByClassName('light');
+  for (let i = 1; i <= buttons.length; i++) {
+    document.getElementById(i).disabled = value;
+  }
 }
