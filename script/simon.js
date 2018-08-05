@@ -1,7 +1,7 @@
 // global variables
 var playerArray = [];
 var computerArray = [];
-var level = 4;
+var level = 3;
 var score = 0;
 
 function startGame() {
@@ -18,7 +18,6 @@ function startGame() {
         timedEvent(counter);
       }, 600);
     }
-    console.log("counter function end")
   }
   timedEvent(0);
 }
@@ -38,14 +37,23 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   score += 250;
   alert('you win');
   document.getElementById('score').textContent = 'Score: ' + score;
-  // if (score > 750) {level = 6}
+  if (score >= 500) {
+    level = 4;
+    document.getElementById('level').textContent = 'Level: ' + (level - 2);
+  }
+  if (score >= 1000) {
+    level = 5;
+    document.getElementById('level').textContent = 'Level: ' + (level - 2);
+  }
   // play a win sound?
   // restart game
   setTimeout(startGame(), 2000);
-} else if (playerArray !== computerArray) {
+} else {
   alert('you lose');
   playerArray  = [];
   computerArray = [];
+  document.getElementById('score').textContent = 'Score: 0'
+  document.getElementById('level').textContent = 'Level: 1'
   //lose events
 }
 }
