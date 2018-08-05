@@ -16,13 +16,14 @@ function startGame() {
         fireLight(currentArray[counter]);
         counter++;
         timedEvent(counter);
-      }, 600);
+      }, 500);
     }
   }
   timedEvent(0);
 }
 // store player inputs
 function playerInput(value) {
+  document.getElementById("audio"+value).play();
   playerArray.push(Number(value));
   if (playerArray.length === computerArray.length) {
     console.log('compare function')
@@ -54,7 +55,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   }
   // play a win sound?
   // restart game
-  setTimeout(startGame(), 2000);
+  setTimeout(startGame(), 4000);
 } else {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
@@ -77,6 +78,6 @@ function getComputerArray() {
 
 function fireLight(num) {
   document.getElementById(num).className = 'light animated';
-  setTimeout(function(){document.getElementById(num).className = "light"}, 201);
-  console.log(document.getElementById("audio"+num));
+  setTimeout(function(){document.getElementById(num).className = "light"}, 301);
+  document.getElementById("audio"+num).play();
 }
