@@ -38,7 +38,6 @@ function compareArrays() {
   console.log(computerArray);
 if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   score += 250;
-  alert('you win');
   document.getElementById('score').textContent = 'Score: ' + score;
   if (score >= 500) {
     level = 4;
@@ -70,8 +69,5 @@ function getComputerArray() {
 }
 
 function fireLight(num) {
-  console.log(document.getElementById(num));
   document.getElementById(num).className = 'light animated';
-  // set a css variable for the button to play animation
-  // reset the css variable to default state
 }
