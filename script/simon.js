@@ -5,7 +5,7 @@ var level = 3;
 var score = 0;
 
 function startGame() {
-  document.getElementById('start').disabled = true; //disable button once game starts
+  document.getElementById('start').disabled = true;
   playerArray = [];
   computerArray = [];
   // get array for game
@@ -61,7 +61,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
     level = 7;
     document.getElementById('level').textContent = 'Level: ' + (level - 2);
   }
-  setTimeout(function(){startGame()},1000); // loop game timeout doesn't work after adding audio effects
+  setTimeout(function(){startGame()},1000); // loop game
 } else {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
   playerArray  = [];
@@ -70,7 +70,7 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
   score = 0;
   document.getElementById('score').textContent = 'Score: 0'
   document.getElementById('level').textContent = 'Level: 1'
-  document.getElementById('start').disabled = false; //re-enable start button
+  document.getElementById('start').disabled = false;
 }
 }
 
