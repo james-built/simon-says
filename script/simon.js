@@ -24,7 +24,12 @@ function startGame() {
 }
 // store player inputs
 function playerInput(value) {
-  document.getElementById("audio"+value).play();
+  var audio = document.createElement('audio');
+  audio.src = 'sounds/'+value+'.mp3';
+  /*audio.addEventListener('ended', function () {
+      document.removeChild(this);
+  }, false);*/ //dynamically creating audio element to allow repeat plays before end, this code to remove the created elements doesn't seem to work?
+  audio.play();
   document.getElementById(value).className = 'light animated';
   setTimeout(function(){document.getElementById(value).className = "light"}, 301);
   playerArray.push(Number(value));
@@ -56,7 +61,6 @@ if (JSON.stringify(playerArray) === JSON.stringify(computerArray)) {
     level = 7;
     document.getElementById('level').textContent = 'Level: ' + (level - 2);
   }
-  // play a win sound?
   setTimeout(startGame(), 4000); // loop game
 } else {
   alert('Simon didn\'t say that! \n' + document.getElementById('score').textContent);
@@ -81,5 +85,11 @@ function getComputerArray() {
 function fireLight(num) {
   document.getElementById(num).className = 'light animated';
   setTimeout(function(){document.getElementById(num).className = "light"}, 301);
-  document.getElementById("audio"+num).play();
+  // document.getElementById("audio"+num).play();
+  var audio = document.createElement('audio');
+  audio.src = 'sounds/'+num+'.mp3';
+  /*audio.addEventListener('ended', function () {
+      document.removeChild(this);
+  }, false);*/ //dynamically creating audio element to allow repeat plays before end, this code to remove the created elements doesn't seem to work?
+  audio.play();
 }
