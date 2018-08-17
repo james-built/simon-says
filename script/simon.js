@@ -25,7 +25,7 @@ function startGame() {
 // store player inputs
 function playerInput(value) {
   var audio = document.createElement('audio');
-  audio.src = 'sounds/'+value+'.mp3';
+  audio.src = '/'+value+'.mp3';
   /*audio.addEventListener('ended', function () {
       document.removeChild(this);
   }, false);*/ //dynamically creating audio element to allow repeat plays before end, this code to remove the created elements doesn't seem to work?
@@ -87,7 +87,7 @@ function fireLight(num) {
   setTimeout(function(){document.getElementById(num).className = "light"}, 301);
   // document.getElementById("audio"+num).play();
   var audio = document.createElement('audio');
-  audio.src = 'sounds/'+num+'.mp3';
+  audio.src = '/'+num+'.mp3';
   /*audio.addEventListener('ended', function () {
       document.removeChild(this);
   }, false);*/ //dynamically creating audio element to allow repeat plays before end, this code to remove the created elements doesn't seem to work?
