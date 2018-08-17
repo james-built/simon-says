@@ -1,0 +1,15 @@
+{
+  "name": "simon-says",
+  "version": "1.0.0",
+  "description": "simple simon game",
+  "main": "index.js",
+  "repository": "https://github.com/james-built/simon-says.git",
+  "author": "james-built <jgbuilt@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
