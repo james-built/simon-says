@@ -4,6 +4,7 @@ body {
 }
 h1 {
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 .light {
   height: 5em;
